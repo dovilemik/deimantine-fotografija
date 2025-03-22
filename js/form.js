@@ -23,14 +23,16 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(data => {
       console.log("New contact request added:", data);
       
-      // Show notification message on success
-      showNotification("Contact request added successfully!");
+      showNotification("Jūsų žinutė sėkmingai išsiųsta!");
+
+      nameInput.value = "";
+      emailInput.value = "";
+      messageInput.value = "";
     })
     .catch(error => {
       console.error("Error adding contact request:", error);
       
-      // Show error notification message on failure
-      showNotification("Failed to add contact request. Please try again.", true);
+      showNotification("Nepavyko išsiųsti žinutės. Bandykite dar kartą", true);
     });
   });
 });
@@ -42,10 +44,10 @@ function showNotification(message, isError = false) {
   notification.style.bottom = '20px';
   notification.style.left = '50%';
   notification.style.transform = 'translateX(-50%)';
-  notification.style.backgroundColor = isError ? 'red' : 'green';
+  notification.style.backgroundColor = isError ? '#f44336' : '#4caf50';
   notification.style.color = 'white';
   notification.style.padding = '10px';
-  notification.style.borderRadius = '5px';
+  notification.style.borderRadius = '8px';
   notification.style.fontSize = '16px';
   notification.style.zIndex = '1000';
   
