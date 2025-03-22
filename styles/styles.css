@@ -1,0 +1,639 @@
+@charset "UTF-8";
+:root {
+  --pink: #E9CBCC; /* Švelnus rožinis - pagrindinė spalva */
+  --background: #FFFFFF; /* Šviesiai pilka - fonas */
+  --text: #263238; /* Tamsiai pilka - tekstui */
+  --accent: #FFDAB9; /* akcentams */
+  --hover-pink: #E5A7A0;
+}
+
+header {
+  background-color: var(--background);
+  color: var(--text);
+  padding: 24px 16px 24px 16px;
+}
+@media (min-width: 1024px) {
+  header {
+    padding: 32px 40px 32px 40px;
+  }
+}
+@media (min-width: 1920px) {
+  header {
+    padding: 60px 320px 60px 320px;
+  }
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 8px;
+}
+@media (min-width: 1024px) {
+  .navigation {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.logo {
+  max-width: 70%;
+  padding-left: 20px;
+}
+@media (min-width: 1024px) {
+  .logo {
+    padding-left: 40px;
+    max-width: 70%;
+  }
+}
+@media (min-width: 1920px) {
+  .logo {
+    padding-left: 40px;
+    max-width: 35%;
+  }
+}
+
+.logo-container {
+  grid-column: span 4/span 4;
+}
+@media (min-width: 1024px) {
+  .logo-container {
+    grid-column: span 3/span 3;
+  }
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* Visos puslapio elementų numatytosios savybės */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Pagrindiniai kūno stiliai */
+body {
+  font-family: Playfair Display SC, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+  display: flex; /* Naudojame flexbox, kad lengvai valdytume puslapio aukštį */
+  flex-direction: column; /* Elementai bus išdėstyti stulpelyje */
+  min-height: 100vh; /* Užtikriname, kad puslapis užims visą ekrano aukštį */
+}
+
+/* Pagrindinis turinys, kad jis užimtų visą likusį aukštį */
+main {
+  flex: 1; /* Tai užtikrina, kad pagrindinis turinys užims visą vietą tarp header ir footer */
+}
+
+.about, .contact {
+  padding: 50px 0;
+  text-align: center;
+}
+
+/* Galerija */
+.gallery {
+  text-align: center;
+}
+
+.gallery__title {
+  color: var(--pink);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+}
+
+.gallery-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center; /* Išcentravimas */
+  padding: 24px 16px 21px;
+}
+@media (min-width: 768px) {
+  .gallery-cards {
+    flex-wrap: nowrap;
+    padding: 24px 32px 21px;
+  }
+}
+
+.item-card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 400px; /* Nustatome maksimalų kortelės plotį */
+}
+
+.cover-picture {
+  border-radius: 30px;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: auto;
+}
+
+/* Pasirinktiniai stiliai mobiliesiems įrenginiams ir didesniems ekranams */
+@media (min-width: 768px) {
+  .cover-picture {
+    height: 400px; /* Nustato maksimalią aukščio reikšmę mobiliesiems įrenginiams */
+  }
+}
+@media (min-width: 1024px) {
+  .cover-picture {
+    height: 400px; /* Nustato didesnį aukštį planšetiniams įrenginiams ir nešiojamiesiems kompiuteriams */
+  }
+}
+@media (min-width: 1440px) {
+  .cover-picture {
+    height: 450px; /* Didinamas aukštis dar didesniems ekranams */
+  }
+}
+.review-album-button {
+  border-radius: 20px;
+  padding: 10px 20px; /* Padidinkite atstumus, kad mygtukai būtų didesni */
+  background-color: var(--pink);
+  color: var(--background);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  margin-top: 10px;
+  width: 100%; /* Užtikrina, kad mygtukai užims visą kortelės plotį */
+  align-self: center;
+}
+
+/* Didinimas mygtuko dydžio ir pritaikymas skirtingiems ekranams */
+@media (min-width: 768px) {
+  .review-album-button {
+    padding: 10px 20px; /* Padidinti pagal įrenginio dydį */
+  }
+}
+@media (min-width: 1024px) {
+  .review-album-button {
+    padding: 15px 30px; /* Didinti mygtuko dydį dar didesniems ekranams */
+  }
+}
+.review-album-button:hover {
+  background-color: var(--hover-pink);
+  transform: translateY(-2px);
+}
+
+/* Sveikinimo skyrius */
+.intro {
+  padding: 0;
+  text-align: center;
+}
+
+.about-me__text {
+  font-size: 18x;
+  font-family: "Cormorant Garamond", serif;
+  color: var(--text);
+  line-height: 25px;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .about-me__text {
+    font-size: 24px;
+  }
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 8px;
+  padding: 0 16px 20px 16px;
+}
+@media (min-width: 768px) {
+  .intro {
+    padding: 0 32px 20px 32px;
+  }
+}
+@media (min-width: 1024px) {
+  .intro {
+    padding: 0 40px 20px 40px;
+  }
+}
+@media (min-width: 1920px) {
+  .intro {
+    padding: 0 320px 20px 320px;
+  }
+}
+
+.about-me__title {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--pink);
+  font-size: 30px;
+}
+@media (min-width: 768px) {
+  .about-me__title {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .about-me__title {
+    font-size: 50px;
+  }
+}
+@media (min-width: 1920px) {
+  .about-me__title {
+    font-size: 60px;
+  }
+}
+
+.profile {
+  border-radius: 20px;
+  min-height: 280px;
+  min-width: 328px;
+  width: 100%;
+  margin: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 768px) {
+  .profile {
+    max-height: 330px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media (min-width: 1024px) {
+  .profile {
+    max-height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media (min-width: 1920px) {
+  .profile {
+    max-height: 350px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+.profile-picture-container {
+  width: 100%; /* Pritaikyti pagal reikalingą plotį */
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+footer {
+  background-color: #ffffff;
+  color: var(--text);
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto; /* Tai užtikrina, kad footer bus visada apačioje */
+  font-family: Playfair Display SC, sans-serif;
+}
+
+.burger-container {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  grid-column-start: 5;
+  grid-column-end: span 1; /* Ensure it doesn't span too many columns */
+  margin-right: 20px;
+}
+@media (min-width: 1024px) {
+  .burger-container {
+    grid-column-start: 4; /* Adjust grid start for larger screens */
+    grid-column-end: span 3; /* Span over 3 columns on larger screens */
+  }
+}
+
+.burger {
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .burger {
+    display: none;
+  }
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 50px;
+  height: 6px;
+  background-color: #333;
+  margin: 10px 0;
+  transition: 0.4s;
+}
+@media (min-width: 768px) {
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 55px;
+    height: 7px;
+  }
+}
+
+.change .bar1 {
+  transform: translate(0, 20px) rotate(-46deg);
+}
+@media (min-width: 768px) {
+  .change .bar1 {
+    transform: translate(0, 22px) rotate(-45deg);
+  }
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+.menu {
+  display: none;
+  top: 100px;
+  right: 30px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  min-width: 150px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+@media (min-width: 768px) {
+  .menu {
+    top: 160px;
+  }
+}
+@media (min-width: 1024px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    opacity: 1;
+    box-shadow: none;
+    transform: none;
+  }
+}
+@media (min-width: 1920px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    opacity: 1;
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu__links {
+    flex-direction: row;
+    display: flex;
+  }
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li {
+  padding: 10px;
+  text-align: center;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--hover-pink);
+  transition: width 0.3s ease;
+}
+
+.menu ul li a:hover {
+  text-decoration: none;
+  color: var(--hover-pink);
+  display: block;
+}
+
+.menu ul li a:hover {
+  color: var(--hover-pink);
+  transform: scale(1.05);
+}
+
+.menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Galerija */
+.gallery {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.album-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.album-grid img:hover {
+  transform: scale(1.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 16px 21px;
+  flex-wrap: wrap;
+}
+
+.form-column,
+.contact-info-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+h2 {
+  text-align: center;
+  color: var(--pink);
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: var(--background);
+  color: var(--text);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--pink);
+  box-shadow: 0 0 5px var(--pink);
+}
+
+textarea {
+  min-height: 120px;
+}
+
+.submit-button {
+  padding: 12px 25px;
+  background-color: var(--pink);
+  color: var(--background);
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.submit-button:hover {
+  background-color: var(--hover-pink);
+  transform: translateY(-2px);
+}
+
+.contact-info-column p {
+  margin: 10px 0;
+}
+
+.contact-info-column p strong {
+  display: inline-block;
+  width: 120px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+@media (min-width: 768px) {
+  .contact-container {
+    padding: 0 32px 20px 32px;
+  }
+}
+@media (min-width: 1024px) {
+  .contact-container {
+    padding: 0 40px 20px 40px;
+  }
+}
+@media (min-width: 1920px) {
+  .contact-container {
+    padding: 0 320px 20px 320px;
+  }
+}
+.form-column,
+.contact-info-column {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+}/*# sourceMappingURL=styles.css.map */

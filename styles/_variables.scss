@@ -1,0 +1,12 @@
+:root {
+    --pink: #E9CBCC; /* Švelnus rožinis - pagrindinė spalva */
+    --background: #FFFFFF; /* Šviesiai pilka - fonas */
+    --text: #263238; /* Tamsiai pilka - tekstui */
+    --accent: #FFDAB9; /* akcentams */
+    --hover-pink: #E5A7A0;
+  }
+
+$mobile: 0;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1920px;

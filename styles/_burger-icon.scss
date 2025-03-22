@@ -1,0 +1,141 @@
+.burger-container {
+  display: flex;
+  justify-content: center;  /* Centers content horizontally */
+  align-items: center;      /* Centers content vertically */
+  grid-column-start: 5;
+  grid-column-end: span 1;  /* Ensure it doesn't span too many columns */
+  margin-right: 20px;
+
+  @media(min-width:$laptop) {
+    grid-column-start: 4;  /* Adjust grid start for larger screens */
+    grid-column-end: span 3; /* Span over 3 columns on larger screens */
+  }
+}
+  
+  .burger {
+    cursor: pointer;
+
+    @media(min-width:$laptop) {
+      display: none;
+    }
+  }
+  
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 50px;
+    height: 6px;
+    background-color: #333;
+    margin: 10px 0;
+    transition: 0.4s;
+
+    @media(min-width:$tablet) {
+      width: 55px;
+      height: 7px;
+    }
+  }
+
+  .change .bar1 {
+    transform: translate(0, 20px) rotate(-46deg);
+
+    @media(min-width:$tablet) {
+      transform: translate(0, 22px) rotate(-45deg);
+    }
+  }
+
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+
+  .menu {
+    display: none;
+    top: 100px;
+    right: 30px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    @media(min-width:$tablet) {
+      top: 160px;
+    }
+    @media(min-width:$laptop) {
+      display: flex;
+      flex-direction: row;
+      opacity: 1;
+      box-shadow: none;
+      transform: none;
+    }
+
+    @media(min-width:$desktop) {
+      display: flex;
+      flex-direction: row;
+      opacity: 1;
+      box-shadow: none;
+      transform: none;
+    }
+  }
+
+  .menu__links {
+    @media(min-width:$laptop) {
+      flex-direction: row;
+      display:flex;
+    }
+  }
+
+
+
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu ul li {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    position: relative; 
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .menu ul li a::before {
+    content: ''; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--hover-pink);
+    transition: width 0.3s ease; 
+  }
+
+  .menu ul li a:hover {
+    text-decoration: none;
+    color: var(--hover-pink);
+    display: block;
+  }
+
+  .menu ul li a:hover {
+    color: var(--hover-pink); 
+    transform: scale(1.05); 
+  }
+
+  .menu.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }

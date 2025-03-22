@@ -1,0 +1,94 @@
+/* Galerija */
+.gallery {
+  text-align: center;
+}
+
+.gallery__title {
+  color: var(--pink);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+}
+
+.gallery-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center; /* Išcentravimas */
+  padding: 24px 16px 21px;
+
+  @media (min-width: $tablet) {
+    flex-wrap: nowrap;
+    padding: 24px 32px 21px;
+  }
+}
+
+.item-card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 400px; /* Nustatome maksimalų kortelės plotį */
+}
+
+
+.cover-picture {
+  border-radius: 30px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: auto;
+}
+
+/* Pasirinktiniai stiliai mobiliesiems įrenginiams ir didesniems ekranams */
+@media (min-width: 768px) {
+  .cover-picture {
+      height: 400px; /* Nustato maksimalią aukščio reikšmę mobiliesiems įrenginiams */
+  }
+}
+
+@media (min-width: 1024px) {
+  .cover-picture {
+      height: 400px; /* Nustato didesnį aukštį planšetiniams įrenginiams ir nešiojamiesiems kompiuteriams */
+  }
+}
+
+@media (min-width: 1440px) {
+  .cover-picture {
+      height: 450px; /* Didinamas aukštis dar didesniems ekranams */
+  }
+}
+
+.review-album-button {
+  border-radius: 20px;
+  padding: 10px 20px; /* Padidinkite atstumus, kad mygtukai būtų didesni */
+
+  background-color: var(--pink);
+  color: var(--background);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  margin-top: 10px;
+  width: 100%; /* Užtikrina, kad mygtukai užims visą kortelės plotį */
+  align-self: center;
+}
+
+/* Didinimas mygtuko dydžio ir pritaikymas skirtingiems ekranams */
+@media (min-width: 768px) {
+  .review-album-button {
+      padding: 10px 20px; /* Padidinti pagal įrenginio dydį */
+  }
+}
+
+@media (min-width: 1024px) {
+  .review-album-button {
+      padding: 15px 30px; /* Didinti mygtuko dydį dar didesniems ekranams */
+  }
+}
+
+.review-album-button:hover {
+  background-color: var(--hover-pink);
+  transform: translateY(-2px);
+}

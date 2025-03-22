@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotografijos Portfolio</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="js/script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<body>
+  <header>
+    <nav class="navigation">
+      <div class="logo-container">
+        <img src="img/logo.jpg" class="logo" alt="logo">
+      </div>
+      <div class="burger-container">
+        <div class="burger change">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+
+        <div class="menu">
+          <ul class="menu__links">
+            <li><a href="#intro">PRADŽIA</a></li>
+            <li><a href="#gallery">GALERIJA</a></li>
+            <li><a href="#about">APIE MANE</a></li>
+            <li><a href="#contact">KONTAKTAI</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="intro">
+    <div class="about-me">
+      <h2 class="about-me__title">Deimantinė fotografija</h2>
+      <p class="about-me__text">Esu Deimantė, fotografė, kuri myli natūralumą ir tikras emocijas. Fotografija man –
+        būdas įamžinti gražiausias akimirkas ir sukurti jaukias, jausmingas istorijas. Kviečiu kartu įamžinti Jūsų
+        prisiminimus!</p>
+    </div>
+    <div class="profile-picture-container">
+      <img src="img/camera.jpeg" class="profile" alt="photographer">
+    </div>
+  </div>
+
+ <section id="gallery" class="gallery">
+    <h3 class="gallery__title">Galerija</h3>
+    <section class="gallery-cards">
+      <article class="item-card">
+          <h3 class="item-card__title">Donata</h3>
+          <figure class="item-picture">
+              <img class="cover-picture" src="img/Portfolio/Grey/solo1.jpeg" alt="išmanusis laikrodis">
+          </figure>
+          <a class="review-album-button" href="album1.html">Peržiūrėti albumą</a>
+      </article>
+      <article class="item-card">
+          <h3 class="item-card__title">Eva</h3>
+          <figure class="item-picture">
+              <img class="cover-picture" src="img/Portfolio/Sand/sand7.jpeg" alt="Ausinės">
+          </figure>
+          <a class="review-album-button" href="album2.html">Peržiūrėti albumą</a>
+      </article>
+  </section>
+  </section>
+
+  <div class="contact-container">
+    <div class="form-column">
+      <h2>Susisiekite</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Vardas</label>
+          <input type="text" id="name" name="name" placeholder="Įveskite savo vardą" required>
+        </div>
+        <div class="form-group">
+          <label for="email">El. paštas</label>
+          <input type="email" id="email" name="email" placeholder="Įveskite el.paštą" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Jūsų žinutė</label>
+          <textarea id="message" name="message" placeholder="Įveskite žinutę" required></textarea>
+        </div>
+        <button type="submit" class="submit-button">Send</button>
+      </form>
+    </div>
+  
+    <div class="contact-info-column">
+      <h2>Kontaktai</h2>
+      <p><strong>Tel.Nr.:</strong> +37063679515</p>
+      <p><strong>El.pastas:</strong> deimantinefotografija@gmail.com</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Deimantinė fotografija. Visos teisės saugomos.</p>
+  </footer>
+</body>
+
+</html>

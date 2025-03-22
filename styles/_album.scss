@@ -1,0 +1,23 @@
+/* Galerija */
+.gallery {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .album-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .album-grid img:hover {
+    transform: scale(1.05);
+  }

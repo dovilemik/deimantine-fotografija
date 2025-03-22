@@ -1,0 +1,23 @@
+/* Visos puslapio elementų numatytosios savybės */
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Pagrindiniai kūno stiliai */
+    body {
+      font-family: Playfair Display SC, sans-serif;
+      line-height: 1.6;
+      background-color: #fff;
+      color: #333;
+      display: flex;             /* Naudojame flexbox, kad lengvai valdytume puslapio aukštį */
+      flex-direction: column;    /* Elementai bus išdėstyti stulpelyje */
+      min-height: 100vh;         /* Užtikriname, kad puslapis užims visą ekrano aukštį */
+    }
+
+  /* Pagrindinis turinys, kad jis užimtų visą likusį aukštį */
+  main {
+      flex: 1;                   /* Tai užtikrina, kad pagrindinis turinys užims visą vietą tarp header ir footer */
+    }
+    

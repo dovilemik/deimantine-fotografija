@@ -1,0 +1,88 @@
+  /* Sveikinimo skyrius */
+  .intro {
+    padding: 0;
+    text-align: center;
+  }
+  
+.about-me__text {
+  font-size: 18x;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--text);
+  @media (min-width: $tablet) {
+    font-size: 24px;
+  }
+  line-height: 25px;
+  margin-bottom: 15px;
+}
+
+  .intro {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 8px;
+    padding: 0 16px 20px 16px;
+
+    @media (min-width: $tablet) {
+      padding: 0 32px 20px 32px;
+    }
+
+    @media (min-width: $laptop) {
+      padding: 0 40px 20px 40px;
+    }
+
+    @media (min-width: $desktop) {
+      padding: 0 320px 20px 320px;
+    }
+}
+
+.about-me__title {
+  font-family: 'Cormorant Garamond', serif;
+    color: var(--pink);
+    font-size: 30px;
+    @media (min-width: $tablet) {
+      font-size: 40px;
+    }
+
+    @media (min-width: $laptop) {
+      font-size: 50px;
+    }
+
+    @media (min-width: $desktop) {
+      font-size: 60px;
+    }
+
+}
+
+.profile {
+  border-radius: 20px;
+  min-height: 280px;
+    min-width: 328px;
+    width: 100%;
+    margin: auto;
+    object-fit: cover;
+
+    @media (min-width: $tablet){
+      max-height: 330px;
+      object-fit: cover;
+  }
+
+    @media (min-width: $laptop){
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  @media (min-width: 1920px){
+    max-height: 350px;
+    object-fit: cover;
+}
+
+
+
+}
+
+.profile-picture-container {
+  width: 100%; /* Pritaikyti pagal reikalingą plotį */
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
