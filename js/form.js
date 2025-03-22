@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
       
       showNotification("Jūsų žinutė sėkmingai išsiųsta!");
 
-      nameInput.value = "";
-      emailInput.value = "";
-      messageInput.value = "";
+      name.value = "";
+      name.value = "";
+      name.value = "";
     })
     .catch(error => {
       console.error("Error adding contact request:", error);
