@@ -224,6 +224,7 @@ main {
   margin-top: 10px;
   width: 100%; /* Užtikrina, kad mygtukai užims visą kortelės plotį */
   align-self: center;
+  text-decoration: none;
 }
 
 /* Didinimas mygtuko dydžio ir pritaikymas skirtingiems ekranams */
