@@ -52,6 +52,7 @@
   }
 
   .menu {
+    position: absolute;
     display: none;
     top: 100px;
     right: 30px;
@@ -73,6 +74,7 @@
       opacity: 1;
       box-shadow: none;
       transform: none;
+      position: static;
     }
 
     @media(min-width:$desktop) {
@@ -81,6 +83,7 @@
       opacity: 1;
       box-shadow: none;
       transform: none;
+      position: static;
     }
   }
 

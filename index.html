@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fotografijos Portfolio</title>
   <link rel="stylesheet" href="styles/styles.css">
-  <script src="js/script.js" defer></script>
+  <script src="js/menu.js" defer></script>
+  <script src="js/form.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <body>
@@ -16,7 +17,7 @@
         <img src="img/logo.jpg" class="logo" alt="logo">
       </div>
       <div class="burger-container">
-        <div class="burger change">
+        <div class="burger">
           <div class="bar1"></div>
           <div class="bar2"></div>
           <div class="bar3"></div>
@@ -26,7 +27,7 @@
           <ul class="menu__links">
             <li><a href="#intro">PRADŽIA</a></li>
             <li><a href="#gallery">GALERIJA</a></li>
-            <li><a href="#about">APIE MANE</a></li>
+            <li><a href="#about">SUSISIEKITE</a></li>
             <li><a href="#contact">KONTAKTAI</a></li>
           </ul>
         </div>
@@ -68,9 +69,9 @@
   </section>
 
   <div class="contact-container">
-    <div class="form-column">
+    <div class="form-column" id="about">
       <h2>Susisiekite</h2>
-      <form>
+      <form id="contactForm" action="javascript:void(0);">
         <div class="form-group">
           <label for="name">Vardas</label>
           <input type="text" id="name" name="name" placeholder="Įveskite savo vardą" required>
@@ -87,7 +88,7 @@
       </form>
     </div>
   
-    <div class="contact-info-column">
+    <div class="contact-info-column" id="contact">
       <h2>Kontaktai</h2>
       <p><strong>Tel.Nr.:</strong> +37063679515</p>
       <p><strong>El.pastas:</strong> deimantinefotografija@gmail.com</p>

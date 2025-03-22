@@ -75,7 +75,7 @@ textarea {
 
 .submit-button:hover {
   background-color: var(--hover-pink);
-  transform: translateY(-2px);
+  // transform: translateY(-2px);
 }
 
 .contact-info-column p {
@@ -111,5 +111,7 @@ textarea {
   display:flex;
   flex-direction: column;
   // align-items: center;
-  border: 1px solid;
+  border: 1px solid #B0BEC5;
+  border-radius: 16px;
+  padding: 20px
 }

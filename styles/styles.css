@@ -128,6 +128,7 @@ h6 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 /* Pagrindiniai kūno stiliai */
@@ -238,7 +239,6 @@ main {
 }
 .review-album-button:hover {
   background-color: var(--hover-pink);
-  transform: translateY(-2px);
 }
 
 /* Sveikinimo skyrius */
@@ -411,6 +411,7 @@ footer {
 }
 
 .menu {
+  position: absolute;
   display: none;
   top: 100px;
   right: 30px;
@@ -435,6 +436,7 @@ footer {
     opacity: 1;
     box-shadow: none;
     transform: none;
+    position: static;
   }
 }
 @media (min-width: 1920px) {
@@ -444,6 +446,7 @@ footer {
     opacity: 1;
     box-shadow: none;
     transform: none;
+    position: static;
   }
 }
 
@@ -602,7 +605,6 @@ textarea {
 
 .submit-button:hover {
   background-color: var(--hover-pink);
-  transform: translateY(-2px);
 }
 
 .contact-info-column p {
@@ -635,5 +637,7 @@ textarea {
 .contact-info-column {
   display: flex;
   flex-direction: column;
-  border: 1px solid;
+  border: 1px solid #B0BEC5;
+  border-radius: 16px;
+  padding: 20px;
 }/*# sourceMappingURL=styles.css.map */
